@@ -4,20 +4,19 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-		git branch: 'main', 
-                    url: 'https://github.com/selenemgr/Lab2-devops.git'
+                git 'https://github.com/selenemgr/Lab2-devops.git'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'  // Use 'bat' instead of 'sh'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'  // Use 'bat' for Windows instead of 'sh'
             }
         }
 
