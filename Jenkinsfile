@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/selenemgr/Lab2-devops.git'
+		git branch: 'main', 
+                    url: 'https://github.com/selenemgr/Lab2-devops.git'
             }
         }
 
